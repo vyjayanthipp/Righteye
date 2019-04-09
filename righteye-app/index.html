@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	
+	var loginClick = 0;
+function login(){
+	
+	loginClick++;
+	
+	// alert(loginClick);
+	var username = document.getElementById("username");
+	var password = document.getElementById("password");
+	if( username.value != 'coding@project.com'){
+		//alert('Wrong Email address');
+		var wrongEmailDivElement = document.getElementById("IncorrectEmail");
+		  if (wrongEmailDivElement.style.display === "none") {
+		    wrongEmailDivElement.style.display = "block";	  	  
+		}
+	} else {
+		if( password.value != 'Coding@123'){
+			
+			
+			if( loginClick==3){
+				var IncorrectLogin3attemptElement = document.getElementById("IncorrectLogin3attempt");
+				  if (IncorrectLogin3attemptElement.style.display === "none") {
+				    IncorrectLogin3attemptElement.style.display = "block";	    
+				}	
+				var wrongPwdDivElement = document.getElementById("IncorrectPassword");
+				  if (wrongPwdDivElement.style.display === "block") {
+				    wrongPwdDivElement.style.display = "none";	    
+				}	
+					
+				
+				
+			} else{
+			//alert('Wrong Email address');
+			var wrongPwdDivElement = document.getElementById("IncorrectPassword");
+			  if (wrongPwdDivElement.style.display === "none") {
+			    wrongPwdDivElement.style.display = "block";	    
+			}
+			}
+			
+			if( loginClick==4){
+				var Invalidpassword4attemptElement = document.getElementById("Invalidpassword4attempt");
+				  if (Invalidpassword4attemptElement.style.display === "none") {
+				    Invalidpassword4attemptElement.style.display = "block";	    
+				}	
+				var wrongPwdDivElement = document.getElementById("IncorrectPassword");
+				  if (wrongPwdDivElement.style.display === "block") {
+				    wrongPwdDivElement.style.display = "none";	    
+				}	
+				var IncorrectLogin3attemptElement = document.getElementById("IncorrectLogin3attempt");
+				  if (IncorrectLogin3attemptElement.style.display === "block") {
+				    IncorrectLogin3attemptElement.style.display = "none";	    
+				}			
+				var loginFormElement = document.getElementById("loginForm"); 
+				    loginFormElement.style.display = "none";		
+				
+			}
+						
+		}else {
+			var loginSuccessDivElement = document.getElementById("LoginSuccess");
+			  if (loginSuccessDivElement.style.display === "none") {
+			    loginSuccessDivElement.style.display = "block";	  
+			}			
+			var loginFormElement = document.getElementById("loginForm"); 
+			    loginFormElement.style.display = "none";	
+			
+		}
+	
+	}
+}
+	
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  
+}
+</style>
+</head>
+<body>
+
+<h2>Login to RightEye</h2>
+<div class="container" id="LoginSuccess" style="display:none;">
+	<p>You have logged in successfully</p> 
+</div>
+
+<div class="container" id="IncorrectEmail" style="display:none;">
+	<p>Wrong email address</p> 
+</div>
+<div class="container" id="IncorrectPassword" style="display:none;">
+	<p>Email address and password doesn't match'</p> 
+</div>
+<div class="container" id="IncorrectLogin3attempt" style="display:none;">
+	<p>Email address and password doesn't match.You only have one more change. Please contact RightEye Support at 800-301-0803.</p> 
+</div>
+<div class="container" id="Invalidpassword4attempt" style="display:none;">
+	<p>Your Email address is locked and invalid. Please contact RightEye Support at 800-301-0803.</p> 
+</div>
+
+<form action="javascript:login()" id ="loginForm" style="display:block;">
+
+  <div class="container">
+    <label for="uname"><b>EMAIL ADDRESS:</b></label>
+    <input type="text" id="username" name="uname" required>
+
+    <label for="psw"><b>PASSWORD:</b></label>
+    <input id="password" type="password"  name="psw" required>
+       
+    <button id="loginButton" type="submit">Login</button>
+    
+  </div>
+
+ 
+</form>
+
+  <div class="container">
+    
+    <a href="faq.html">Need Help?</a></span>
+  </div>
+
+</body>
+</html>

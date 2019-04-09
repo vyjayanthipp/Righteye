@@ -4,3 +4,4 @@ target/
 test-output/
 .class
 bin/
+.DS_Store
